@@ -1,0 +1,31 @@
+def chat():
+    return "Hello! I'm a simple chatbot. How can I help you?"
+
+def res(user_input):
+    if "hello" in user_input.lower():
+        return "Hi there!"
+    elif "hi" in user_input.lower():
+        return "hii there!"
+    elif "how are you" in user_input.lower():
+        return "I'm just a chatbot, but I'm here to assist you!"
+    elif "who is your creator?" in user_input.lower():
+        return "Sowjanya is my creator."
+    elif "what you love most?" in user_input.lower():
+        return "Doing internship in codsoft."
+    elif "bye" in user_input.lower():
+        return "Goodbye! Have a great day!"
+    else:
+        return "I'm sorry, I didn't understand that."
+
+def main():
+    print(chat())
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() == "exit":
+            print("Bot: Goodbye!")
+            break
+        response = res(user_input)
+        print("Bot:", response)
+
+if __name__ == "__main__":
+    main()
