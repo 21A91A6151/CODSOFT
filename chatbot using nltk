@@ -1,0 +1,21 @@
+import nltk
+from nltk.chat.util import Chat, reflections
+
+responses = [
+    (r'hello|hi|hey', ['Hello!', 'Hi there!', 'Hey!']),
+    (r'how are you|how are you doing', ['I am just a chatbot.', 'I am doing fine.']),
+    (r'is everything is going good', ['yes. fine , thankyou.']),
+    (r'suggest any few programming languages?', ['python, c++ ,c , java']),
+    (r'what is your name|who are you', ['I am a simple chatbot.', 'Call me ChatBot.']),
+    (r'bye|goodbye', ['Goodbye!', 'Take care!', 'See you later!']),
+    (r'(.*)', ["I'm sorry, I don't understand.", "Can you please repeat again?"])
+]
+
+chatbot = Chat(responses, reflections)
+print("Hello! I'm your chatbot. How can I help you today?")
+while True:
+    user_input = input("> ")
+    if user_input.lower() == 'exit':
+        break
+    response = chatbot.respond(user_input)
+    print(response)
